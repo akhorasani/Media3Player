@@ -21,21 +21,31 @@ fun PlayerControls(player: ExoPlayer?) {
         horizontalAlignment = Alignment.Start,
         verticalArrangement = Arrangement.Center
     ) {
-        Button(onClick = { player?.playWhenReady = true }) {
-            Text("Play")
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceAround
+        ) {
+            Button(onClick = { player?.playWhenReady = true }) {
+                Text("Play")
+            }
+            Button(onClick = { player?.playWhenReady = false }) {
+                Text("Pause")
+            }
         }
-        Button(onClick = { player?.playWhenReady = false }) {
-            Text("Pause")
-        }
-        Button(onClick = {
-            player?.seekTo(player.currentPosition - 10_000) // Seek backward 10 seconds
-        }) {
-            Text("Seek -10s")
-        }
-        Button(onClick = {
-            player?.seekTo(player.currentPosition + 10_000) // Seek forward 10 seconds
-        }) {
-            Text("Seek +10s")
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceAround
+        ) {
+            Button(onClick = {
+                player?.seekTo(player.currentPosition - 10_000) // Seek backward 10 seconds
+            }) {
+                Text("Seek -10s")
+            }
+            Button(onClick = {
+                player?.seekTo(player.currentPosition + 10_000) // Seek forward 10 seconds
+            }) {
+                Text("Seek +10s")
+            }
         }
     }
 }
