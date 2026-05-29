@@ -23,7 +23,7 @@ class MainActivity : ComponentActivity() {
                 ) {
                     Media3PlayerView(
                         // replace your own videoUrl here.
-                        videoUrl = "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+                        videoUrl = "https://cdn.jsdelivr.net/npm/big-buck-bunny-1080p@0.0.6/video.mp4"
                     )
                 }
             }
