@@ -73,4 +73,8 @@ class PlayerViewModel : ViewModel() {
             }
         }
     }
+    override fun onCleared() {
+        super.onCleared()
+        releasePlayer()
+    }
 }
